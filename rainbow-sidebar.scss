@@ -1,10 +1,10 @@
-$iterations: 25; // Number of main folders
-$base-hue: 200; // Base hue value, modify as needed
+$iterations: 10; // Number of main folders
+$base-hue: 0; // Base hue value, modify as needed
 $saturation: 100%;
 $alpha: 1;
-$max-lightness: 50%;
+$max-lightness: 65%;
 $lightness-step: 2.5%; // Step value for lightness
-$factor: 8;
+$factor: 15;
 
 // Define a function to calculate HSLA colors with a minimum lightness
 @function calc-hsla($multi) {
