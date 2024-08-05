@@ -4,7 +4,7 @@ $saturation: 100%;
 $alpha: 1;
 $max-lightness: 65%;
 $lightness-step: 2.5%; // Step value for lightness
-$factor: 15;
+$factor: 30;
 
 // Define a function to calculate HSLA colors with a minimum lightness
 @function calc-hsla($multi) {
