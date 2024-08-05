@@ -1,0 +1,15 @@
+{
+	"name": "obsidian-rainbow-sidebar",
+	"version": "1.0.0",
+	"description": "A simple sass snippet to modify the look of your Obsidian Sidebar just changing a few values",
+	"main": "index.js",
+	"scripts": {
+		"dev": "sass --watch ./:../"
+	},
+	"keywords": [],
+	"author": "@alfonsogorka",
+	"license": "ISC",
+	"dependencies": {
+		"sass": "^1.77.8"
+	}
+}
