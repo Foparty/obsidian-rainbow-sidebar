@@ -2,7 +2,9 @@
 
 A simple sass snippet to modify the look of your Obsidian Sidebar just changing a few values
 
-![image](/img/CleanShot%202024-08-05%20at%2013.27.59@2x.png)
+[[/img/CleanShot%202024-08-05%20at%2013.27.59@2x.png | width = 150px]]
+
+[<img src="/img/CleanShot%202024-08-05%20at%2013.27.59@2x.png" width="150"/>](/img/CleanShot%202024-08-05%20at%2013.27.59@2x.png)
 
 ## How to use
 
