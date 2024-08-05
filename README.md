@@ -1,6 +1,9 @@
 # The BEST Obsidian Colored Sidebar
 
-INPIRED BY: [@sergiogmn](https://x.com/SergioGMN)
+INPIRED BY: [@sergiogmn](https://x.com/SergioGMN) and [@cyanvoxel](https://www.youtube.com/@cyanvoxel)
+
+IMPORTANT: rainbow-sidebar file will force you to name your folders like 01, 05, 012, etc.
+In the other hand im working on a new version (`sidebar2.scss`) that will not need any type of naming and also will color lost notes on the main tree. (it is working but not tested yet)
 
 A simple sass snippet to modify the look of your Obsidian Sidebar just changing a few values
 
