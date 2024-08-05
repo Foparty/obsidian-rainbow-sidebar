@@ -1,0 +1,106 @@
+$iterations: 100; // Number of main folders
+$base-hue: 0; // Base hue value, modify as needed
+$saturation: 100%;
+$alpha: 1;
+$max-lightness: 50%;
+$lightness-step: 2.5%; // Step value for lightness
+$factor: 8;
+
+// Define a function to calculate HSLA colors with a minimum lightness
+@function calc-hsla($multi) {
+	@return hsla(
+		$base-hue + ($multi * $factor * 1),
+		// Adjust hue calculation if needed
+		$saturation,
+		$max-lightness,
+		$alpha
+	);
+}
+
+// Generate CSS custom properties for each iteration
+:root {
+	@for $i from 0 through $iterations {
+		--color-#{$i}: #{calc-hsla($i)};
+		--multi-#{$i}: #{$i};
+	}
+
+	--cool-gray: #515768;
+	/* Default Prefix: 99 */
+
+	--default-text-color: #d0d0d0;
+	--highlight: #fff;
+	--shadow: #0b0c2c;
+
+	--nav-item-weight-hover: bold;
+}
+
+.theme-light {
+	--contrast-color: var(--shadow);
+	--default-text-color: var(--shadow);
+	--bg-contrast-amount: 70%;
+	--fg-contrast-amount: 30%;
+	--medium-contrast-amount: 60%;
+	--active-contrast-amount: 30%;
+
+	/*Darker Versions of Bright Colors for Light Theme */
+	--yellow: color-mix(in srgb, #ffd85e 90%, var(--shadow));
+	--lime: color-mix(in srgb, #97e768 90%, var(--shadow));
+	--color: color-mix(in srgb, #52eea3 85%, var(--shadow));
+	--cyan: color-mix(in srgb, #51e1e9 85%, var(--shadow));
+	--cool-cyan: color-mix(in srgb, #43cfea 85%, var(--shadow));
+	--light-blue: color-mix(in srgb, #54b6f8 90%, var(--shadow));
+}
+
+/* Dark Theme Specific Properties */
+.theme-dark {
+	--contrast-color: var(--highlight);
+	--bg-contrast-amount: 15%;
+	--fg-contrast-amount: 40%;
+	--medium-contrast-amount: 20%;
+	--active-contrast-amount: 10%;
+}
+
+/* All Folder Titles */
+.nav-folder-title {
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+/* Narrower Padding on Desktop*/
+@media only screen and (min-width: 768px) {
+	.nav-file-title,
+	.nav-folder-title {
+		/* padding: 3px 5px 2px 4px !important; */
+		padding-top: 3px !important;
+		padding-right: 5px !important;
+		padding-bottom: 2px !important;
+		padding-left: 15px;
+	}
+}
+@for $i from 0 through $iterations {
+	.nav-files-container > div > :nth-child(#{$i} of .tree-item) .tree-item-self {
+		--multi: var(--multi-#{$i});
+		--color: var(--color-#{$i});
+		color: var(--color);
+		--nav-item-color-hover: color-mix(
+			in srgb,
+			var(--color) var(--fg-contrast-amount),
+			var(--contrast-color)
+		);
+		--nav-item-background-hover: color-mix(
+			in srgb,
+			var(--color) var(--bg-contrast-amount),
+			transparent
+		);
+		--background-modifier-border-focus: color-mix(
+			in srgb,
+			var(--color) 40%,
+			transparent
+		);
+		--nav-collapse-icon-color: color-mix(
+			in srgb,
+			var(--color) 60%,
+			transparent
+		);
+	}
+}
